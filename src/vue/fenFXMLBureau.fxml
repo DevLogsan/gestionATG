@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="424.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_bureauController">
+   <children>
+      <TableView id="tvMembres" fx:id="tvMembres" layoutX="27.0" layoutY="122.0" prefHeight="200.0" prefWidth="676.0">
+        <columns>
+          <TableColumn fx:id="colonneId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="colonneFonction" prefWidth="75.0" text="Fonction" />
+            <TableColumn fx:id="colonneNom" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="colonnePrenom" prefWidth="75.0" text="Prénom" />
+            <TableColumn fx:id="colonneAdresse" prefWidth="75.0" text="Adresse" />
+            <TableColumn fx:id="colonneCP" prefWidth="75.0" text="CP" />
+            <TableColumn fx:id="colonneVille" prefWidth="75.0" text="Ville" />
+            <TableColumn fx:id="colonneEmail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="colonnePortable" prefWidth="75.0" text="Portable" />
+        </columns>
+      </TableView>
+      
+      <Label fx:id="lblMessage" layoutX="186.0" layoutY="45.0" prefHeight="30.0" prefWidth="358.0" text="Membres du bureau" textAlignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

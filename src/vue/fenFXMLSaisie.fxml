@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_saisieController">
+       <children>
+      <Label layoutX="253.0" layoutY="21.0" text="Saisie des dons et adhésions" textFill="RED">
+
+      </Label>
+      <Label layoutX="33.0" layoutY="73.0" text="Date :" />
+      <Label layoutX="33.0" layoutY="116.0" text="Identité :" />
+      <Label layoutX="33.0" layoutY="164.0" text="Adresse :" />
+      <Label layoutX="35.0" layoutY="255.0" text="Pays :" />
+      <Label layoutX="34.0" layoutY="299.0" text="Téléphone :" />
+      <Label layoutX="33.0" layoutY="342.0" text="Email :" />
+      <Label layoutX="34.0" layoutY="389.0" text="Somme versée :" />
+      <TextField fx:id="txtAdresse" layoutX="144.0" layoutY="163.0" prefHeight="25.0" prefWidth="321.0" promptText="Adresse" />
+      <TextField fx:id="txtPays" layoutX="146.0" layoutY="254.0" promptText="Pays (FR pour France)" />
+      <TextField fx:id="txtFixe" layoutX="146.0" layoutY="298.0" promptText="Fixe" />
+      <TextField fx:id="txtEmail" layoutX="146.0" layoutY="338.0" prefHeight="25.0" prefWidth="309.0" promptText="Email" />
+      <TextField fx:id="txtSommeVersee" layoutX="146.0" layoutY="385.0" promptText="En euros" />
+      <TextField fx:id="txtCivilite" layoutX="144.0" layoutY="115.0" promptText="Type de civilité" />
+      <TextField fx:id="txtNom" layoutX="315.0" layoutY="115.0" promptText="Nom" />
+      <TextField fx:id="txtPrenom" layoutX="483.0" layoutY="115.0" promptText="Prenom" />
+      <TextField fx:id="txtCP" layoutX="381.0" layoutY="206.0" prefHeight="25.0" prefWidth="84.0" promptText="Code Postal" />
+      <TextField fx:id="txtVille" layoutX="145.0" layoutY="206.0" prefHeight="25.0" prefWidth="216.0" promptText="Ville" />
+      <TextField fx:id="txtPortable" layoutX="306.0" layoutY="298.0" promptText="Portable" />
+      <DatePicker fx:id="txtDate" layoutX="143.0" layoutY="69.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
+      <Button id="btnEnregistrer" fx:id="btnEnregistrer" layoutX="291.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleEnregistrerSaisie" text="Enregistrer" />
+   </children>
+</AnchorPane>
