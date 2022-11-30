@@ -49,6 +49,43 @@ public class GestionMembre {
         }
     }
     
+    public static ObservableList<Membre> listeMembresDons()
+    {
+        ObservableList<Membre> lesMembres = FXCollections.observableArrayList();
+        Membre unMembre;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+        String pilote = "org.gjt.mm.mysql.Driver";
+        String url = new String("jdbc:mysql://localhost/atg");
+        String req;
+
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            
+            req = "Select * from membres";
+
+            rs = stmt.executeQuery(req);
+            while (rs.next())
+            {
+                unMembre = new Membre(rs.getInt("id"), rs.getString("titre"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("cp"), rs.getString("ville"), rs.getString("pays"), rs.getString("telFixe"), rs.getString("telPortable"), rs.getString("email"));
+                lesMembres.add(unMembre);
+            }
+            stmt.close();
+            conn.close();
+            
+            return lesMembres;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Erreur Requete SQL listeEtudiants - " + e.getMessage());
+            return null;
+        }
+    }
+    
     public static void insererMembre(Membre unMembre, float don, LocalDate datedujour)
     {    
         
