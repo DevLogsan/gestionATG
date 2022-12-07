@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import modele.GestionMembre;
+import modele.GestionBureau;
 import modele.Bureau;
 
 /**
@@ -46,15 +46,14 @@ public class FenFXML_bureauController implements Initializable {
     @FXML
     private TableColumn<Bureau, String> colonnePortable; // Même nom que la colonne du TableView
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ObservableList<Bureau> lesMembres = FXCollections.observableArrayList();
+        ObservableList<Bureau> lesBureaux = FXCollections.observableArrayList();
         
-        lesMembres = GestionMembre.listeMembres();
-        
-        System.out.println("NOMBRE:" + lesMembres.size());
-        tvMembres.setItems(lesMembres);
+        lesBureaux = GestionBureau.listeBureaux();
+        tvMembres.setItems(lesBureaux);
         
         // Initialise le TableView tvEtudiants
         colonneId.setCellValueFactory(new PropertyValueFactory<Bureau, Integer>("id"));
@@ -69,6 +68,10 @@ public class FenFXML_bureauController implements Initializable {
         
         // Pour redimensionner les colonnes automatiquement
         tvMembres.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+    
+    @FXML
+    public void handleInsererBureau(){
 
     }
 }
