@@ -71,7 +71,7 @@ public class GestionMembre {
             rs = stmt.executeQuery(req);
             while (rs.next())
             {
-                unMembre = new Membre(rs.getInt("id"), rs.getString("titre"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("cp"), rs.getString("ville"), rs.getString("pays"), rs.getString("telFixe"), rs.getString("telPortable"), rs.getString("email"));
+                unMembre = new Membre(rs.getString("titre"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("cp"), rs.getString("ville"), rs.getString("pays"), rs.getString("telFixe"), rs.getString("telPortable"), rs.getString("email"));
                 lesMembres.add(unMembre);
             }
             stmt.close();
@@ -86,7 +86,7 @@ public class GestionMembre {
         }
     }
     
-    public static void insererMembre(Membre unMembre, float don, LocalDate datedujour)
+    public static void insererMembre(ObservableList<Membre> lesMembres, float don, LocalDate datedujour)
     {    
         
         Connection conn;
@@ -102,11 +102,12 @@ public class GestionMembre {
             conn = DriverManager.getConnection(url,"root","");
             stmt = conn.createStatement();
             stmt2 = conn.createStatement();
-
+            Membre unMembre = lesMembres.get(0);
             reqInser = "Insert into membres(titre, nom, prenom, adresse, cp, ville, pays, telFixe, telPortable, email) values('" + unMembre.getTitre() + "', '" + unMembre.getNom() + "', '" + unMembre.getPrenom() + "', '" + unMembre.getAdresse() + "', '" + unMembre.getCp() + "', '" + unMembre.getVille() + "', '" + unMembre.getPays() + "', '" + unMembre.getTelFixe() + "', '" + unMembre.getTelPortable() + "', '" + unMembre.getEmail() + "')";
             reqMembre = "Select max(id) idm FROM membres";
             reqCotisation = "Select montant FROM cotisation";
             stmt.executeUpdate(reqInser);
+            //System.out.println("OK");
             rs = stmt.executeQuery(reqMembre);
             rs2 = stmt2.executeQuery(reqCotisation);
             rs2.next();
