@@ -12,42 +12,6 @@ import modele.Membre;
 import modele.Bureau;
 
 public class GestionMembre {
-    public static ObservableList<Bureau> listeMembres()
-    {
-        ObservableList<Bureau> lesMembres = FXCollections.observableArrayList();
-        Bureau unBureau;
-        Connection conn;
-        Statement stmt;
-        ResultSet rs;
-        String pilote = "org.gjt.mm.mysql.Driver";
-        String url = new String("jdbc:mysql://localhost/atg");
-        String req;
-
-        try
-        {
-            Class.forName(pilote);
-            conn = DriverManager.getConnection(url,"root","");
-            stmt = conn.createStatement();
-            
-            req = "Select * from bureau";
-
-            rs = stmt.executeQuery(req);
-            while (rs.next())
-            {
-                unBureau = new Bureau(rs.getInt("id"), rs.getString("fonction"), rs.getString("titre"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("cp"), rs.getString("ville"), rs.getString("telPortable"), rs.getString("email"));
-                lesMembres.add(unBureau);
-            }
-            stmt.close();
-            conn.close();
-            
-            return lesMembres;
-        }
-        catch (Exception e)
-        {
-            System.out.println("Erreur Requete SQL listeEtudiants - " + e.getMessage());
-            return null;
-        }
-    }
     
     public static ObservableList<Membre> listeMembresDons()
     {

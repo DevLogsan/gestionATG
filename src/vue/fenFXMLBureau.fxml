@@ -27,5 +27,6 @@
          <font>
             <Font size="37.0" />
          </font></Label>
+      <Button id="btnInsererBureau" layoutX="339.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleInsererBureau" text="Inserer" />
    </children>
 </AnchorPane>

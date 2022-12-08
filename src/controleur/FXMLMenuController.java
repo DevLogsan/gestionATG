@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Logan
+ * @author LLG
  */
 
 public class FXMLMenuController implements Initializable {
@@ -28,9 +28,9 @@ public class FXMLMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
         
     }
+    
     @FXML
     private void handleMembreBureau()
     {

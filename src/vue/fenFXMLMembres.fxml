@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FXMLMenuController">
-    
+<AnchorPane id="AnchorPane" prefHeight="347.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FXMLMenuController">
+   <children>
+      <Label fx:id="lblMessage" layoutX="219.0" layoutY="30.0" prefHeight="54.0" prefWidth="307.0" text="Liste des membres" textAlignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <TableView id="tvMembres" fx:id="tvMembresDon" layoutX="72.0" layoutY="102.0" prefHeight="200.0" prefWidth="601.0">
+         <columns>
+            <TableColumn id="colonneId" fx:id="colonneId" prefWidth="75.0" text="Id" />
+            <TableColumn id="colonneTitre" fx:id="colonneTitre" prefWidth="75.0" text="Titre" />
+            <TableColumn id="colonneNom" fx:id="colonneNom" prefWidth="75.0" text="Nom" />
+            <TableColumn id="colonnePrenom" fx:id="colonnePrenom" prefWidth="75.0" text="Prénom" />
+            <TableColumn id="colonneAdresse" fx:id="colonneAdresse" prefWidth="75.0" text="Adresse" />
+            <TableColumn id="colonneCP" fx:id="colonneCP" prefWidth="75.0" text="CP" />
+            <TableColumn id="colonneVille" fx:id="colonneVille" prefWidth="75.0" text="Ville" />
+            <TableColumn id="colonneEmail" fx:id="colonneEmail" prefWidth="75.0" text="Email" />
+         </columns>
+      </TableView>
+   </children>
 </AnchorPane>

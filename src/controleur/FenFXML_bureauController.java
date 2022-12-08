@@ -5,14 +5,19 @@
  */
 package controleur;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import modele.GestionBureau;
 import modele.Bureau;
@@ -46,6 +51,8 @@ public class FenFXML_bureauController implements Initializable {
     @FXML
     private TableColumn<Bureau, String> colonnePortable; // Même nom que la colonne du TableView
     
+    @FXML
+    private Stage premierStage;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -71,7 +78,22 @@ public class FenFXML_bureauController implements Initializable {
     }
     
     @FXML
-    public void handleInsererBureau(){
-
+    private void handleInsererBureau()
+    {
+        try
+        {
+            premierStage = new Stage();
+            premierStage.setTitle("Modification des infos");
+            FXMLLoader loader = new FXMLLoader(FXMLMenuController.class.getResource("/vue/fenFXMLInsererBureau.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            Scene scene = new Scene(rootLayout);
+            premierStage.setScene(scene);
+            
+            premierStage.show();
+        }
+        catch (IOException e)
+        {
+        System.out.println("Erreur chargement seconde fenetre : " + e.getMessage());
+        }
     }
 }

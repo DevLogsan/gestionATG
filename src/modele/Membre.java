@@ -33,12 +33,10 @@ public class Membre {
         this.email = email;
     }
 
-    
-
     public Membre() {
         
     }
-
+    
     public String getPays() {
         return pays;
     }
