@@ -57,5 +57,31 @@ public class GestionBureau {
         }
     }
     
-    
+    public static void insererBureaux(ObservableList<Bureau> lesBureaux)
+    {    
+        
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+        String pilote = "org.gjt.mm.mysql.Driver";
+        String url = new String("jdbc:mysql://localhost/atg");
+        String reqInser, reqMembre, reqInser2, reqCotisation;
+            
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            Bureau unBureau = lesBureaux.get(0);
+            // continuer ici
+            reqInser = "Insert into bureau(titre, nom, prenom, adresse, cp, ville, pays, telFixe, telPortable, email) values('" + unMembre.getTitre() + "', '" + unMembre.getNom() + "', '" + unMembre.getPrenom() + "', '" + unMembre.getAdresse() + "', '" + unMembre.getCp() + "', '" + unMembre.getVille() + "', '" + unMembre.getPays() + "', '" + unMembre.getTelFixe() + "', '" + unMembre.getTelPortable() + "', '" + unMembre.getEmail() + "')";
+            stmt.close();
+            conn.close();
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur requete d'insertion : " + e.getMessage());
+        }
+    }
 }
