@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="413.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_bureauController">
+   <children>
+      <Label layoutX="168.0" layoutY="337.0" text="Portable" />
+      <Label layoutX="175.0" layoutY="291.0" text="Email" />
+      <Label layoutX="178.0" layoutY="246.0" text="Ville" />
+      <Label layoutX="182.0" layoutY="201.0" text="CP" />
+      <Label layoutX="168.0" layoutY="155.0" text="Adresse" />
+      <Label layoutX="168.0" layoutY="111.0" text="Prenom" />
+      <Label layoutX="178.0" layoutY="68.0" text="Nom" />
+      <Label layoutX="168.0" layoutY="24.0" text="Fonction" />
+      <TextField id="txtFonction" fx:id="txtFonction" layoutX="236.0" layoutY="20.0" />
+      <TextField id="txtNom" fx:id="txtNom" layoutX="236.0" layoutY="64.0" />
+      <TextField id="txtPrenom" fx:id="txtPrenom" layoutX="236.0" layoutY="107.0" />
+      <TextField id="txtAdresse" fx:id="txtAdresse" layoutX="236.0" layoutY="151.0" />
+      <TextField id="txtCp" fx:id="txtCp" layoutX="236.0" layoutY="197.0" />
+      <TextField id="txtVille" fx:id="txtVille" layoutX="236.0" layoutY="242.0" />
+      <TextField id="txtEmail" fx:id="txtEmail" layoutX="236.0" layoutY="287.0" />
+      <Button id="btnAjouter" layoutX="284.0" layoutY="373.0" mnemonicParsing="false" onAction="handleConfirmerModifierBureau" text="Modifier" />
+      <TextField id="txtPortable" fx:id="txtPortable" layoutX="236.0" layoutY="333.0" />
+   </children>
+</AnchorPane>
